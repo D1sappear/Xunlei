@@ -1,0 +1,342 @@
+/* 公共样式开始 */
+
+/* 清除标签自带外边距和内边距 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,textarea,button,p,blockquote,th,td{
+    margin: 0;
+    padding: 0;
+}
+
+/* 需要大部分文本居中时可以设置 */
+body {
+    text-align:center;
+}
+
+/* 取消图标边框 */
+img{
+    border: none;
+}
+
+/* 取消a标签的下划线 */
+a{
+    text-decoration: none;
+}
+
+/* 取消li标签的圆点 */
+li {
+    list-style: none;
+}
+
+/* 实现满屏效果 */
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+/* 盒子共用 */
+.box {
+    width: 100%;
+    height: 100%;
+}
+
+/* 图片共用 */
+.img {
+    width: 100%;
+    height: 100%;
+    /* img是行内块 会识别代码之间的空白 */
+    display: block;
+}
+
+/* 隐藏界面的类 */
+.display {
+    display: none;
+}
+
+/* 圆点选中状态 */
+.selected {
+    color: rgba(255,255,043) !important;
+    /* font-size: 70px; */
+}
+
+/* 公共样式结束 */
+
+/* 导航栏开始 */
+/* 导航栏box需要相对屏幕定位,使其永远浮动在屏幕上方 */
+.nav {
+    width: 100%;
+    height: 85px;
+    /* background-color: skyblue; */
+    /* 使导航栏脱离文档流，并相对屏幕定位，永远定格在屏幕上方 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 提升导航栏的层级 */
+    z-index: 999;
+}
+
+/* logo容器样式,向左浮动 */
+.nav > .logo {
+    width: 117px;
+    height: 53px;
+    float: left;
+    margin-top: 7px;
+    margin-left: 30px;
+}
+
+/* logo容器图片的样式 */
+.nav > .logo > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 导航栏右侧box的样式,向右浮动 */
+.nav > .nav-bar {
+    float: right;
+    height: 85px;
+}
+
+/* 右侧box内两个按钮容器的通用样式,向左浮动成一排 */
+.nav > .nav-bar li {
+    float: left;
+    width: 156px;
+    height: 85px;
+    line-height: 85px;
+    text-align: center;
+}
+
+/* 按钮文字颜色 */
+.nav > .nav-bar a {
+    color: #fff;
+}
+
+/* 按钮之间的间隔和大小， */
+.nav > .nav-bar li i {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+/* 右侧阴影 */
+.nav > .nav-bar li .aside {
+    width: 156px;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0;
+    right: -156px;
+    transition: right .2s;
+}
+
+/* 层级提升的类 */
+.more {
+    z-index: 555;
+    position: relative;
+}
+
+/* 鼠标移动到按钮上时阴影出现 */
+.nav > .nav-bar li:hover .aside{
+    right: 0;
+}
+/* 导航栏结束 */
+
+/* 侧边栏开始 */
+
+/* 侧边栏相对屏幕定位 */
+.side {
+    width: 45px;
+    height: 200px;
+    /* background-color: pink; */
+    position: fixed;
+    top: 335px;
+    right: -5px;
+    z-index: 999;
+}
+
+/* 侧边点样式 */
+.side > ul > li {
+    width: 25px;
+    height: 25px;
+    list-style-type: disc;
+    font-size: 63px;
+    color: rgba(255,255,255,.7);
+    position: absolute;
+    right: -16px;
+    top: 18px;
+}
+
+/* 伪类选择器确定第二个li的位置 */
+.side > ul > li:nth-child(2) {
+    top: 70px;
+}
+
+/* 鼠标覆盖li时显示为白色 */
+.side > ul > li:hover {
+    color: #fff;
+    font-size: 70px;
+    top: 16px;
+    right: -19px;
+}
+
+.side > ul > li:nth-child(2):hover {
+    top: 68px;
+    right: -20px;
+}
+
+/* 侧边栏结束 */
+
+/* 第一页开始 */
+.first {
+    /* width: 100%;
+    height: 100%; */
+    background-color: red;
+    /* 隐藏视频超过屏幕的部分 */
+    overflow: hidden;
+    position:relative;
+}
+
+/* 视频样式 */
+.first > video {
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* 文本box,需要position脱离文档流并覆盖整个视频 */
+.first > .text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 文本图片样式 */
+.first > .text img {
+    width: 715px;
+    margin-top: 110px;
+}
+
+/* 下载按钮样式 */
+.first > .text .a {
+    display: block;
+    width: 120px;
+    height: 60px;
+    line-height: 60px;
+    border: 2px solid #fff;
+    margin: 0 auto 20px;
+    color: #fff;
+}
+
+/* 鼠标覆盖下载按钮时，背景颜色变化 */
+.first > .text .a:hover {
+    background-color: rgba(255,255,255,.6)
+}
+
+/* 下标样式和动画 */
+.first > .text .animate {
+    display: block;
+    color: #fff;
+    font-size: 60px;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: upDown 1.5s linear infinite;
+}  
+
+/* 自定义下标动画 */
+@keyframes upDown {
+    0% {
+        transform: translateY(-3px);
+    }
+    25% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+    75% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+/* 第一页结束 */
+
+/* 第二页开始 */
+
+/* 父元素 */
+.second {
+    position: relative;
+}
+
+/* 按钮box的大小，并定位到父容器下方 */
+.second > .btn-box {
+    width: 100%;
+    height: 85px;
+    /* background-color: pink; */
+    position: absolute;
+    bottom: 45px;
+}
+
+/* 设置按钮box内装载按钮容器的具体宽高，并让其在按钮box内水平居中 */
+.second > .btn-box ul {
+    width: 880px;
+    height: 85px;
+    margin: 0 auto 0;
+}
+
+/* 每一个按钮容器的通用样式，使其向左浮动成一行，增加下划线样式*/
+.second > .btn-box li {
+    width: 176px;
+    height: 84px;
+    /* background-color: red; */
+    float: left;
+    border-bottom: 1px solid rgba(255,255,255,.6)
+}
+
+/* 使用a标签装载每一个按钮,通过background-image来设置雪碧图中按钮图标*/
+.second > .btn-box li a {
+    /* 由于a标签是行内块元素，所以需要使其转换成块元素才能调整其他样式 */
+    display: block;
+    width: 66px;
+    height: 60px;
+    /* background-color: pink; */
+    margin: 10px auto 0;
+    background-image: url(./carousel_btns.png);
+    transition: transform .4s linear;
+}
+
+/* 使用伪类选择器,通过background-position-x和background-position-y属性调整每一个按钮图标 */
+.second > .btn-box li:nth-child(1) a{
+    background-position-x: 7px;
+    background-position-y: 2px;
+}
+
+.second > .btn-box li:nth-child(2) a{
+    background-position-x: -157px;
+    background-position-y: 2px;
+}
+
+.second > .btn-box li:nth-child(3) a{
+    background-position-x: -304px;
+    background-position-y: 2px;
+}
+
+.second > .btn-box li:nth-child(4) a{
+    background-position-x: -462px;
+    background-position-y: 0px;
+}
+
+.second > .btn-box li:nth-child(5) a{
+    background-position-x: -606px;
+    background-position-y: 2px;
+}
+
+/* 鼠标覆盖到按钮容器上时,底部下划线需要亮起来，将其设置为白色即可 */
+.second > .btn-box li:hover {
+    border-bottom: 1px solid #fff;
+}
+
+/* 鼠标覆盖到按钮容器上时,按钮需要想上浮起 */
+.second > .btn-box li:hover > a {
+    transform: translateY(-3px);
+}
+
+/* 第二页结束 */

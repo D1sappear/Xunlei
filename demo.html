@@ -1,0 +1,118 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-09 08:25:53
+ * @LastEditTime: 2021-03-10 20:43:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \html\demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <link rel="stylesheet" href="./demo.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+</head>
+<body>
+    <!-- 顶部导航条 -->
+    <div class="nav">
+        <div class="logo">
+            <img src="./logo.png" alt="">
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="#"><i class="iconfont">&#xe7f9;</i>产品</a></li>
+                <li>
+                    <a href="#" class="more"><i class="iconfont">&#xe61e;</i>更多</a>
+                    <div class="aside">
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="side">
+        <ul>
+            <li class="point selected" onclick="changeBox(0)"></li>
+            <li class="point" onclick="changeBox(1)"></li>
+        </ul>
+    </div>
+    <!-- 第一页开始 -->
+    <div class="first box">
+        <!-- 实现满屏效果 -->
+        <!-- haha --> 
+        <video src="./201702241034284066.mp4" muted autoplay loop></video>
+        <div class="text">
+            <img src="./富强民主文明和谐.png" alt="">
+            <a href="#" class="a">下载我们产品</a>
+            <a href="#">
+                <i class="iconfont animate">&#xe60b;</i>
+            </a>
+        </div>
+    </div>
+    <!-- 第一页结束 -->
+    <!-- 第二页开始 -->
+    <div class="second box display">
+        <img class="img" src="./QQ图片20210309214801.jpg" alt="">
+        <div class="btn-box">
+            <ul>
+                <li onmouseover="changeImg(0)"><a href="#1"></a></li>
+                <li onmouseover="changeImg(1)"><a href="#1"></a></li>
+                <li onmouseover="changeImg(2)"><a href="#1"></a></li>
+                <li onmouseover="changeImg(3)"><a href="#1"></a></li>
+                <li onmouseover="changeImg(4)"><a href="#1"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 第二页结束 -->
+</body>
+<script>
+    // 获取图片元素
+    let img = document.querySelector('.img')
+
+    // 图片路径数组
+    let imgArr = ['QQ图片20210309214801.jpg','201702151452533692.jpg','201804171831356107.png','201805021444527093.jpg','201805021446184133.jpg']
+
+    // 获取界面数组
+    let boxArr = document.querySelectorAll('.box')
+
+    // 获取侧边栏的圆点数组
+    let pointArr = document.querySelectorAll('.point')
+
+    // 切换图片的函数changeImg,形参是下标
+    let changeImg = (index) =>  {
+        // 遍历图片数组得到下标
+        for(let i=0; i<imgArr.length; i++) {
+            // 当遍历到的下标与当前按钮传过来的index一致时,切换对应的图片
+            if(index === i) {
+                // 设置图片的src
+                img.src = './' + imgArr[i]
+            }
+        }
+    }
+
+    // 切换界面的函数changeBox,形参是下标
+    let changeBox = (index) => {
+        // 遍历界面数组得到下标
+        for(let i=0; i<boxArr.length; i++) {
+            // 所有界面都添加类display，隐藏界面
+            boxArr[i].classList.add('display')
+            for(let j=0; j<pointArr.length; j++) {
+                pointArr[j].classList.remove('selected')
+                if(index === j) {
+                    pointArr[j].classList.add('selected')
+                }
+            }
+            // 当遍历得到的下标与所传参数一致时，切换到对应的界面
+            if(index === i) {
+                // 当前选中的界面不隐藏，移去display
+                boxArr[i].classList.remove('display')
+            }
+        }
+        
+    }
+</script>
+</html>

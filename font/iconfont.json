@@ -1,0 +1,30 @@
+{
+  "id": "2407623",
+  "name": "demo_html",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1110411",
+      "name": "下箭头",
+      "font_class": "jiantou9",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "689262",
+      "name": "类目 品类 分类 类别",
+      "font_class": "leimupinleifenleileibie",
+      "unicode": "e7f9",
+      "unicode_decimal": 59385
+    },
+    {
+      "icon_id": "12473808",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    }
+  ]
+}
